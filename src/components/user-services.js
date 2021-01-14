@@ -1,6 +1,7 @@
 import React from 'react';
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
+import SearchComponent from '../components/usercomponent/searchadvertisecomponent';
 
 const UserServicesComponent = (props)=>{
     return (
@@ -15,11 +16,11 @@ const UserServicesComponent = (props)=>{
                 <Tab eventKey="User Edit Advertise" title="Edit Advertise">
                     
                 </Tab>
-                <Tab eventKey="User Delete Advertise" title="Delete Advertise">
+                <Tab eventKey="User Delete Advertise" title="Delete Advertsie">
                     
                 </Tab>
-                <Tab eventKey="User View Advertise" title="Read Advertise">
-                
+                <Tab eventKey="User Serach Advertise" title="Search Advertsie">
+                <SearchComponent></SearchComponent>
                 </Tab>
             </Tabs>
             <hr></hr>

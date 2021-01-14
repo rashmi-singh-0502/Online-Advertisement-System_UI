@@ -21,7 +21,7 @@ function App() {
 
     <div className="App"> 
      <FooterComponent></FooterComponent>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="info" variant="dark" expand="lg">
         <Navbar.Brand href="#home">Online Advertisement System</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -54,6 +54,9 @@ function App() {
         <Route path='/'  component={HomeComponent} exact />
         <Route path='/admin-services' component={AdminServicesComponent} exact />
         <Route path='/user-services' component={UserServicesComponent} exact />
+      
+
+
 
       </Switch>
 
