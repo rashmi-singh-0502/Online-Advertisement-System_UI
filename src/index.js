@@ -7,11 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import globalReducer from './reducers/advertise/global-reducer'
+import { createStore, applyMiddleware, compose } from 'redux';
+import globalReducer from './reducers/advertise/global-reducer';
 
 let advertiseStore = createStore(globalReducer, 
-  applyMiddleware(ReduxThunk));
+compose(applyMiddleware(ReduxThunk),
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 ReactDOM.render(
   <React.StrictMode> 

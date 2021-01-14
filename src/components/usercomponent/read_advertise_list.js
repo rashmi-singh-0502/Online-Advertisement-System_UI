@@ -1,8 +1,9 @@
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import getAdvertiseListAction from '../actions/user_actions/read_advertise_list_action';
+import getAdvertiseListAction from '../../actions/user_actions/read_advertise_list_action';
+import '../../css/read_advertise_list.css';
 
-export const GetAdvertiseListComponent = (props) => {
+const GetAdvertiseListComponent = (props) => {
     let advertiseList = useSelector(state => state);
     const dispatch = useDispatch();
 
@@ -25,7 +26,7 @@ export const GetAdvertiseListComponent = (props) => {
                 {/* <form action="/"> */}
                 <h2>Advertise List</h2>
                 <table border="2">
-                    <thead>
+                    <thead class="indigo white-text">
                         <tr>
                             <th>Advertise id</th>
                             <th>Advertise Title</th>
@@ -58,13 +59,12 @@ function renderTableData(advertiseList){
                 <td>{description}</td>
                 <td>{price}</td>
                 <td>
-                    <button className="btn btn-info">Update </button>
-                    <button className="btn btn-danger">Delete </button>
-                    <button className="btn btn-info">View </button>
+                    <button className="btn btn-info shadow-none"><span className="glyphicon glyphicon-edit" aria-hidden="true" title="Edit advertise"></span></button>
+                    <button className="btn btn-danger shadow-none"><span className="glyphicon glyphicon-remove" aria-hidden="true" title="Delete advertise"></span></button>
                 </td>
             </tr>
         )
     })
 };
 
-/* export default GetAdvertiseListComponent */
+export default GetAdvertiseListComponent;

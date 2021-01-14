@@ -81,8 +81,10 @@ const SearchAdvertise = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{advertise.data.advertiseid}</td>
-                            <td>{advertise.data.title}</td>
+                            {/* <td>{advertise.data.advertiseid}</td>
+                            <td>{advertise.data.title}</td> */}
+                            <td>{advertise.advertiseid}</td>
+                            <td>{advertise.title}</td>
                         </tr>
                     </tbody>
                 </Table>
