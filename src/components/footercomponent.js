@@ -13,8 +13,8 @@ render(){
     return(
         <div>
             <footer className = "footer">
-                <span className="text-muted">All Rights Reserved 2021 @OAS</span>
-
+                {/* <span className="text-dark">All Rights Reserved 2021 @OAS</span> */}
+                <span>All Rights Reserved 2021 @OAS</span>
             </footer>
         </div>
     )
