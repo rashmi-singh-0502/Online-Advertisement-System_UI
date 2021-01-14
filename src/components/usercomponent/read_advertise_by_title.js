@@ -31,7 +31,7 @@ const ReadAdvertiseByTitleComponent = (props) => {
                 </div>
                 <br></br>
                 <div>
-                    <button type="submit">View</button>
+                    <button type="submit" className="btn-sm btn-success">View</button>
                 </div>
 
                 <table border="2">
@@ -71,8 +71,8 @@ function renderTableData(advertiseList){
                 <td>{description}</td>
                 <td>{price}</td>
                 <td>
-                    <button className="btn btn-info shadow-none">Edit</button>
-                    <button className="btn btn-danger shadow-none">Delete</button>
+                    <button className="btn-sm btn-info shadow-none">Edit</button>
+                    <button className="btn-sm btn-danger shadow-none">Delete</button>
                 </td>
             </tr>
         )
