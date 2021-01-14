@@ -1,29 +1,39 @@
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import getAdvertiseListAction from '../../actions/user_actions/read_advertise_list_action';
-import '../../css/read_advertise_list.css';
+import ReadByAdvertiseTitleAction from '../../actions/user_actions/read_advertise_by_title_action';
+import '../../css/read_advertise_by_title.css'
+import {useRef} from 'react';
 
-const GetAdvertiseListComponent = (props) => {
+let dispatch;
+const ReadAdvertiseByTitleComponent = (props) => {
     let advertiseList = useSelector(state => state);
-    const dispatch = useDispatch();
+    dispatch = useDispatch();
 
-    React.useEffect(() => {
-        AdvertiseList()
-    },[]);
-
-    const AdvertiseList = () => {
-        dispatch(getAdvertiseListAction())
-    }
     console.log("Advertise List: ",advertiseList);
-    if(!Array.isArray(advertiseList))
-    {
+
+    if(!Array.isArray(advertiseList)){
         advertiseList = [];
         console.log("Set advertiseList to blank array");
     }
+
+    const advertiseTitleRef = useRef(null);
+    const readAdvertise = (event) => {
+
+    }
+
     return(
         <div>
             <center>
-                {/* <form action="/"> */}
+            <form onSubmit={handleSubmit}>
+                <br></br>
+                <div>
+                    <input type="text" name="title" placeholder="Enter advertise title"></input>
+                </div>
+                <br></br>
+                <div>
+                    <button type="submit" className="btn-sm btn-success">View</button>
+                </div>
+
                 <table border="2">
                     <thead class="indigo white-text">
                         <tr>
@@ -39,17 +49,20 @@ const GetAdvertiseListComponent = (props) => {
                         {renderTableData(advertiseList)}
                     </tbody>
                 </table>
-                {/* </form> */}
+                </form>
             </center>
         </div>
     );
-};
+}
 
 function renderTableData(advertiseList){
     console.log("advertiseList: ",advertiseList);
     return advertiseList.map((advertise, index) => {
         const name = advertise.category.name;
-        const{ad_id,title,description,price} = advertise
+        const ad_id = advertise.ad_id;
+        const title = advertise.title;
+        const description = advertise.description;
+        const price = advertise.price;
         return(
             <tr key = {ad_id}>
                 <td>{ad_id}</td>
@@ -66,4 +79,16 @@ function renderTableData(advertiseList){
     })
 };
 
-export default GetAdvertiseListComponent;
+function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target)
+    const title = data.get('title');
+    console.log(title);
+    if(title===''){
+        alert("Title cannot be blank");
+        return;
+    }
+    dispatch(ReadByAdvertiseTitleAction(title))
+}
+
+export default ReadAdvertiseByTitleComponent;

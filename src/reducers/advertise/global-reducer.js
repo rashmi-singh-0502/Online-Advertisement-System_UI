@@ -9,7 +9,13 @@ const globalReducer = (state = initialState, action) => {
                 case 'SHOW_CATEGORY_LIST':
                     console.log("category view in reducer",action.payload);
                     return action.payload;
-            default:
+            
+        case 'READ_ADVERTISE_BY_TITLE':
+            return action.payload;
+            
+        case 'SEARCH_ADVERTISE':
+            return action.payload;
+        default:
             return [];
     }
 }
