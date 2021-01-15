@@ -6,6 +6,7 @@ table
 {
     text-align: center;
     border: 1px solid black;
+    margin-top: 30px;
 }
 
 thead
@@ -32,3 +33,4 @@ th
     font-size: 20px;
     margin-right: 3px;
 }
+
