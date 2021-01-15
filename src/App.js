@@ -10,6 +10,7 @@ import AdminServicesComponent from './components/admin-services'
 import FooterComponent from './components/footercomponent'
 import UserServicesComponent from './components/user-services'
 import Carouselcomponent from './components/carousell'
+import  AboutUsComponent from './components/about'
 
 
 
@@ -26,12 +27,13 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Link to='/'>
+            <Link to='/home'>
               <Nav.Link href="#home">Home</Nav.Link>
-              
-              
             </Link>
+            <Link to='/about'>
             <Nav.Link href="#link">About</Nav.Link>
+            </Link>
+            
             <NavDropdown title="Services" id="basic-nav-dropdown">
               <Link to='/admin-services'>
                 <NavDropdown.Item href="#adminservices">Admin</NavDropdown.Item>
@@ -54,10 +56,10 @@ function App() {
       
       {/* Switching the content from nav operations */}
       <Switch>
-        <Route path='/'  component={HomeComponent} exact />
+        <Route path='/home'  component={HomeComponent} exact />
         <Route path='/admin-services' component={AdminServicesComponent} exact />
         <Route path='/user-services' component={UserServicesComponent} exact />
-      
+        <Route path='/about' component={AboutUsComponent} exact />
 
 
 
@@ -65,8 +67,13 @@ function App() {
 
 
 
-      <Carouselcomponent></Carouselcomponent>
 
+
+
+
+
+    
+      <Carouselcomponent></Carouselcomponent>
       
     </div>
   );

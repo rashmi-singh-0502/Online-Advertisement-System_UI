@@ -4,13 +4,14 @@ import Tabs from 'react-bootstrap/Tabs'
 import SearchComponent from '../components/usercomponent/searchadvertisecomponent';
 import GetAdvertiseListComponent from '../components/usercomponent/read_advertise_list';
 import ReadByAdvertiseTitleComponent from '../components/usercomponent/read_advertise_by_title';
+import AddUser from './usercomponent/AddUser';
 
 const UserServicesComponent = (props)=>{
     return (
         <div>
             <Tabs defaultActiveKey="User" id="uncontrolled-tab-example">
-                <Tab eventKey="User Profile" title="Edit User Profile"> 
-                   
+                <Tab eventKey="User Profile" title="Register into User Profile"> 
+                <AddUser></AddUser>
                 </Tab>
                 <Tab eventKey="User Advetise" title="Post New Advertise">
                   
