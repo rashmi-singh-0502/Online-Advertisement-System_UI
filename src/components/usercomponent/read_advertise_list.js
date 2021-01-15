@@ -32,7 +32,7 @@ const GetAdvertiseListComponent = (props) => {
                             <th>Category</th>
                             <th>Advertise Description</th>
                             <th>Price</th>
-                            <th>Actions</th>
+                            {/* <th>Actions</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -57,10 +57,10 @@ function renderTableData(advertiseList){
                 <td>{name}</td>
                 <td>{description}</td>
                 <td>{price}</td>
-                <td>
+                {/* <td>
                     <button className="btn-sm btn-info shadow-none">Edit</button>
                     <button className="btn-sm btn-danger shadow-none">Delete</button>
-                </td>
+                </td> */}
             </tr>
         )
     })

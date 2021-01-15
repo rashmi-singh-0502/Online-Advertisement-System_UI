@@ -25,15 +25,16 @@ const ReadAdvertiseByTitleComponent = (props) => {
         <div>
             <center>
             <form onSubmit={handleSubmit}>
-                <br></br>
-                <div>
+                <div className="container">
+                <div className="search-box">
+                    <p>Enter advertise title:</p>
                     <input type="text" name="title" placeholder="Enter advertise title"></input>
                 </div>
-                <br></br>
+                {/* <br></br> */}
                 <div>
-                    <button type="submit" className="btn-sm btn-success">View</button>
+                    <button type="submit" className="btn-sm btn-success shadow-none">View</button>
                 </div>
-
+                </div>
                 <table border="2">
                     <thead class="indigo white-text">
                         <tr>
@@ -42,7 +43,7 @@ const ReadAdvertiseByTitleComponent = (props) => {
                             <th>Category</th>
                             <th>Advertise Description</th>
                             <th>Price</th>
-                            <th>Actions</th>
+                            {/* <th>Actions</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -70,10 +71,10 @@ function renderTableData(advertiseList){
                 <td>{name}</td>
                 <td>{description}</td>
                 <td>{price}</td>
-                <td>
+               {/*  <td>
                     <button className="btn-sm btn-info shadow-none">Edit</button>
                     <button className="btn-sm btn-danger shadow-none">Delete</button>
-                </td>
+                </td> */}
             </tr>
         )
     })

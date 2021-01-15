@@ -21,9 +21,9 @@ const UserServicesComponent = (props)=>{
                 <Tab eventKey="User Read Advertise By Title" title="Read Advertise By Title">
                 <ReadByAdvertiseTitleComponent></ReadByAdvertiseTitleComponent>
                 </Tab>
-                <Tab eventKey="User Edit Advertise" title="Edit Advertise">
+                {/* <Tab eventKey="User Edit Advertise" title="Edit Advertise">
                     
-                </Tab>
+                </Tab> */}
                 <Tab eventKey="User Delete Advertise" title="Delete Advertise">
                     
                 </Tab>
