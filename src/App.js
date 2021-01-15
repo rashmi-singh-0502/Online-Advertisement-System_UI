@@ -9,6 +9,7 @@ import HomeComponent from './components/home'
 import AdminServicesComponent from './components/admin-services'
 import FooterComponent from './components/footercomponent'
 import UserServicesComponent from './components/user-services'
+import Carouselcomponent from './components/carousell'
 
 
 
@@ -19,6 +20,7 @@ function App() {
 
     <div className="App"> 
      <FooterComponent></FooterComponent>
+
       <Navbar bg="info" variant="dark" expand="lg">
         <Navbar.Brand href="#home">Online Advertisement System</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,6 +28,8 @@ function App() {
           <Nav className="mr-auto">
             <Link to='/'>
               <Nav.Link href="#home">Home</Nav.Link>
+              
+              
             </Link>
             <Nav.Link href="#link">About</Nav.Link>
             <NavDropdown title="Services" id="basic-nav-dropdown">
@@ -42,6 +46,7 @@ function App() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      
 
 
 
@@ -60,7 +65,7 @@ function App() {
 
 
 
-
+      <Carouselcomponent></Carouselcomponent>
 
       
     </div>
