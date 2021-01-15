@@ -33,7 +33,10 @@ const SearchAdvertise = (props) => {
                 <Form>
                     <Form.Group controlId="formGroupText">
                         <Form.Label>Search by valid name/id</Form.Label>
-                        <Form.Control id="pathVariable" type="text" placeholder="Name or Advertise ID" />
+                        <Form.Control id="pathVariable" type="text" placeholder="Name or Advertise ID" onBlur={validateName} />
+                        <small id="namevalid" class="form-text text-danger invalid-feedback">
+        Advertise name should only contain only characters
+       </small>
                     </Form.Group>
                     <Button variant="success" type="button" call onClick={handleSubmit}>
                         Search
@@ -67,6 +70,27 @@ const SearchAdvertise = (props) => {
         
         
     }
+
+    function validateName(event){
+
+        const data = event.target.value;
+        console.log("target",data);
+       
+        let regex = /[a-zA-Z]$/;
+        let inputdata = data;
+        let str = inputdata.trim();
+        console.log(regex, str);
+        if (regex.test(str) && str != "") {
+      
+          event.target.classList.remove('custom-invalid');
+          event.target.classList.add('custom-valid');
+      
+        } else {
+      
+          event.target.classList.remove('custom-valid');
+          event.target.classList.add('custom-invalid');
+        }
+    };
 
     function renderData(advertise) {   
         console.log("advertise dispatcher object returned from the server : ", advertise);
