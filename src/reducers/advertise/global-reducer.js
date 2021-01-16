@@ -24,6 +24,8 @@ const globalReducer = (state = initialState, action) => {
                     return {...state, users};
         case "View_User":
             return action.payload;
+        case 'DELETE_ADVERTISE':
+             return action.payload;
         default:
                         return [];
     }

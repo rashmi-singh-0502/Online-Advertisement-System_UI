@@ -4,9 +4,13 @@ import Tabs from 'react-bootstrap/Tabs'
 import ViewCategoryListComponent from '../components/admincomponents/view_category_list'
 import AddCategoryComponent from '../components/admincomponents/add_category';
 import ViewUserComponent from '../components/admincomponents/view_user_by_name';
+import LogOutComponent from '../components/user_logout';
+
 const AdminServicesComponent = (props)=>{
+    
     return (
         <div>
+            <LogOutComponent></LogOutComponent>
             <Tabs defaultActiveKey="Admin" id="uncontrolled-tab-example">
                 <Tab eventKey="Admin add Category" title="Add Category"> 
                 <AddCategoryComponent></AddCategoryComponent>

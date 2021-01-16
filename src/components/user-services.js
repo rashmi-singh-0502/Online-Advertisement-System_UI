@@ -5,10 +5,12 @@ import SearchComponent from '../components/usercomponent/searchadvertisecomponen
 import GetAdvertiseListComponent from '../components/usercomponent/read_advertise_list';
 import ReadByAdvertiseTitleComponent from '../components/usercomponent/read_advertise_by_title';
 import AddUser from './usercomponent/AddUser';
+import LogOutComponent from '../components/user_logout';
 
 const UserServicesComponent = (props)=>{
     return (
         <div>
+            <LogOutComponent></LogOutComponent>
             <Tabs defaultActiveKey="User" id="uncontrolled-tab-example">
                 <Tab eventKey="User Profile" title="Register into User Profile"> 
                 <AddUser></AddUser>

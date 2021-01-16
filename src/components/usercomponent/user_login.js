@@ -39,10 +39,16 @@ const UserServices = (props) => {
                     </div>
                 </div> */}
  
-                <button type="submit" className="btn btn-success btn-sm shadow-none" onClick={loginUser} href="/user-services">Log in</button>
+                <button type="submit" className="btn-success btn-sm shadow-none" onClick={loginUser} href="/user-services">Log in</button>
                 <p className="forgot-password text-center">
                 <a href="#">Forgot password?</a>
                 </p>
+
+                <p>New User?</p>
+                <button type="submit" className="btn-success btn-sm shadow-none">Register</button>
+
+
+
             </form>
             </div>
     )
