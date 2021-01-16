@@ -28,7 +28,7 @@ let dispatch ;
 <div>
 <center>
     {/* <form action="/"> */}
-    <h2>Category List</h2>
+  
     <table border="4">
         <thead class="indigo white-text">
             <tr>
@@ -60,8 +60,8 @@ function renderTableData(categoryList) {
              <td>{category_desc}</td>
              <td>
              &nbsp;&nbsp;&nbsp;
-             <button className="btn btn-info  shadow-none"><span className="glyphicon glyphicon-edit" aria-hidden="true" title="Edit Category">Edit</span></button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{/*<button className="btn btn-info  shadow-none"><span className="glyphicon glyphicon-edit" aria-hidden="true" title="Edit Category">Edit</span></button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
                     <button className="btn btn-danger shadow-none" ><span className="glyphicon glyphicon-trash" aria-hidden="true" title="Delete Category">Delete</span></button>
                  
              </td>

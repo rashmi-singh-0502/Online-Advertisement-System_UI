@@ -15,11 +15,11 @@ export const AddCategoryComponent = (props) =>{
     
       dispatch = useDispatch();
     history = useHistory();
-    let categoryList = useSelector(state => state.globalReducer);
+    /*let categoryList = useSelector(state => state.globalReducer);
 
     dispatch(addCategoryAction());
    console.log("categoryList in comp: ", categoryList);
-   
+*/
      
 
    return(
@@ -34,18 +34,18 @@ export const AddCategoryComponent = (props) =>{
                     <p>Category Name</p>
                         <input type="text" name="name" placeholder="Enter Category Name" onBlur={validateCategoryName} />
                         <small id="namevalid" class="form-text text-danger invalid-feedback">
-        Candidate name should only contain character between 3 to 12
+        Category name should only contain character between 3 to 12
        </small>
                 </div>
                 <div class="item">
                     <p>Category Description</p>
                     <input type="text" name="desc" placeholder="Enter Category Description" onBlur={validateCategoryDescription}/>
                     <small id="descriptionvalid" class="form-text text-danger invalid-feedback">
-        Candidate Desciption should only contain character between 3 to 25
+        Category Desciption should only contain character between 3 to 25
        </small>
                 </div>
                 <div class="btn-block">
-          <button type="submit" class="btn btn-primary" >ADD </button>
+          <button type="submit" class="btn btn-primary" href='/' >ADD </button>
         </div>
             </form>
         </div>
