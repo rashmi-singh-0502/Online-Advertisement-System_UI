@@ -3,7 +3,7 @@ import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 import ViewCategoryListComponent from '../components/admincomponents/view_category_list'
 import AddCategoryComponent from '../components/admincomponents/add_category';
-
+import ViewUserComponent from '../components/admincomponents/view_user_by_name';
 const AdminServicesComponent = (props)=>{
     return (
         <div>
@@ -23,6 +23,7 @@ const AdminServicesComponent = (props)=>{
                     
                 </Tab>
                 <Tab eventKey="View Operation" title="View User Details">
+                    <ViewUserComponent></ViewUserComponent>
                     
                 </Tab>
             </Tabs>
