@@ -12,6 +12,7 @@ import UserServicesComponent from './components/user-services'
 /* import './components/admincomponents/admin_login' */
 import Services from './components/admincomponents/admin_login'
 import UserServices from './components/usercomponent/user_login'
+import Carouselcomponent from './components/carousell'
 
 
 
@@ -21,8 +22,8 @@ import UserServices from './components/usercomponent/user_login'
 function App() {
   return (
 
-    <div className="App"> 
-     <FooterComponent></FooterComponent>
+    <div className="App">
+      <FooterComponent></FooterComponent>
       <Navbar bg="info" variant="dark" expand="lg">
         <Navbar.Brand href="#home">Online Advertisement System</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -37,12 +38,13 @@ function App() {
               <Link to='/admin_login'>
                 <NavDropdown.Item href="#adminservices">Admin</NavDropdown.Item>
               </Link>
-              <Link to='/user-services'>
-              <NavDropdown.Item href="#userservices"> User</NavDropdown.Item>
+              {/* <Link to='/user-services'> */}
+              <Link to='/user_login'>
+                <NavDropdown.Item href="#userservices"> User</NavDropdown.Item>
               </Link>
 
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.1">Know More?</NavDropdown.Item>
+              {/* <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.1">Know More?</NavDropdown.Item> */}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -50,16 +52,17 @@ function App() {
 
 
 
-      
-      
+
+
       {/* Switching the content from nav operations */}
       <Switch>
-        <Route path='/'  component={HomeComponent} exact />
+        <Route path='/' component={Carouselcomponent} exact />
         {/* <Route path='/admin-services' component={AdminServicesComponent} exact /> */}
         <Route path='/admin_login' component={Services} exact />
-
+        <Route path='/admin-services' component={AdminServicesComponent} exact />
+        <Route path='/user_login' component={UserServices} exact />
         <Route path='/user-services' component={UserServicesComponent} exact />
-      
+
 
 
 
@@ -69,7 +72,7 @@ function App() {
 
 
 
-      
+
     </div>
   );
 }
