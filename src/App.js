@@ -16,12 +16,13 @@ import Carouselcomponent from './components/carousell'
 import GetAdvertiseListComponent from './components/usercomponent/read_advertise_list'
 import ReadAdvertiseByTitleComponent from './components/usercomponent/read_advertise_by_title'
 import AddUser from './components/usercomponent/AddUser'
-import SearchComponent from './components/usercomponent/searchadvertisecomponent'
+import SearchComponent from './components/usercomponent/searchadvertisecomponent';
 import AddCategoryComponent from './components/admincomponents/add_category';
 import ViewCategoryListComponent from './components/admincomponents/view_category_list';
 import ViewCategoryByNameComponent from './components/admincomponents/view_category_by_name';
 import ShowUsers from './components/admincomponents/view_user_list'
 
+import AddAd from './components/usercomponent/AddAd'
 
 
 
@@ -82,7 +83,7 @@ function App() {
         <Route path='/viewadvertiselist' component={GetAdvertiseListComponent}></Route>
         <Route path='/viewadvertisebytitle' component={ReadAdvertiseByTitleComponent}></Route>
         <Route path='/registeruser' component={AddUser}></Route>
-        <Route path='/postadvertise'></Route>
+        <Route path='/postadvertise' component={AddAd}></Route>
         <Route path='/searchadvertise' component={SearchComponent}></Route>
         <Route path='/addcategorycomponent' component={AddCategoryComponent} exact />
         <Route path='/viewcategorylist' component={ViewCategoryListComponent} exact />
