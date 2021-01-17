@@ -6,8 +6,8 @@ table
 {
     text-align: center;
     border: 1px solid black;
-    margin-top: 30px;
-    height: 300px;
+    margin-top: 10px;
+    height: 200px;
 }
 
 thead
@@ -19,24 +19,29 @@ thead
 th
 {
     height: 50px;
-    padding: auto;
+    padding: 10px;
+    color: black;
 }
 
-.btn,.btn-info,.btn-danger
+/* .btn-danger
 {
     margin: 5px;
     height: 50px;
     width: 80px;
-    font-size: 30px;
-}
-
-.glyphicon {
-    font-size: 20px;
-    margin-right: 3px;
-}
+    font-size:20px;
+} */
 
 td{
     word-wrap: break-word;
-    padding: 10px;
+    padding: 5px;
+    color: black;
 }
+
+/* button
+{
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+    font-size:10px;
+} */
 

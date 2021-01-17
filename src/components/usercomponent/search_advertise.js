@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ReadByAdvertiseTitleAction from '../../actions/user_actions/read_advertise_by_title_action';
+import SearchAction from '../../actions/user_actions/searchaction'
 import '../../css/read_advertise_by_title.css'
 import LogOutComponent from '../user_logout_header';
 
 let dispatch;
 let validTitle = false;
 let set;
-const ReadAdvertiseByTitleComponent = (props) => {
+
+const SearchAdvertise = (props) => {
     let advertiseList = useSelector(state => state);
     dispatch = useDispatch();
 
@@ -22,17 +23,17 @@ const ReadAdvertiseByTitleComponent = (props) => {
         <div>
             <LogOutComponent></LogOutComponent>
             <center>
-                <form onSubmit={handleSubmit} onMouseMove={EnableDisable} className="shadow-none">
+                <form onSubmit={handleSubmit}  onMouseMove={EnableDisable} className="shadow-none">
                     <div className="container_search">
                         <div className="search-box">
-                            <label for="title">Enter advertise title:</label>
+                        <label for="title">Search advertise</label>
                             <input type="text" name="title" placeholder="Enter advertise title" required="required" aria-required="true" onBlur={validateTitle}></input>
                             <small id="titlevalid" class="form-text text-danger invalid-feedback">
                                 Advertise title is blank
                             </small>
                         </div>
                         <div>
-                            <button type="submit" className="btn-sm btn-success shadow-none" disabled="disabled" id="btnsubmit">View</button>
+                            <button type="submit" className="btn btn-sm btn-success shadow-none" disabled="disabled" id="btnsubmit">Search</button>
                         </div>
                     </div>
                     <table border="2" className="table_view">
@@ -121,7 +122,7 @@ function handleSubmit(event) {
         alert("Title cannot be blank");
         return;
     }
-    dispatch(ReadByAdvertiseTitleAction(title))
+    dispatch(SearchAction(title))
 }
 
-export default ReadAdvertiseByTitleComponent;
+export default SearchAdvertise;

@@ -2,9 +2,10 @@ import React from 'react';
 import Category from '../../models/category';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch } from 'react-redux';
- import '../../css/admin_login.css'; 
+import '../../css/admin_login.css';
 import AddCategoryAction from '../../actions/admin_actions/add_category'
 import { useHistory } from "react-router-dom";
+import LogOutComponent from '../admin_logout_header';
 
 let set;
 let dispatch;
@@ -23,6 +24,8 @@ export const AddCategoryComponent = (props) => {
 
 
   return (
+    <div>
+      <LogOutComponent></LogOutComponent>
     <body>
       {/* <div class="testbox"> */}
         <form onSubmit={handleSubmit}
@@ -56,6 +59,7 @@ export const AddCategoryComponent = (props) => {
         </form>
       {/* </div>*/}
     </body> 
+    </div>
 
 
 

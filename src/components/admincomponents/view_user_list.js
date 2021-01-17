@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ShowUsersAction from '../../actions/admin_actions/view_user_list';
 import DeleteUserAction from '../../actions/admin_actions/delete_user'
+import LogOutComponent from '../admin_logout_header'
 
 let dispatch;
 const ShowUsers = (props) => {
@@ -25,6 +26,7 @@ const ShowUsers = (props) => {
         console.log("Set userList to blank array");
     }
     return (<div>
+        <LogOutComponent></LogOutComponent>
         <center>
             <table border="2">
                 <thead>

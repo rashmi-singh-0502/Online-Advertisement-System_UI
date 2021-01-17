@@ -1,11 +1,14 @@
 import React from 'react';
+import Carouselcomponent from './carousell';
+import HeaderComponent from './header';
 
-const HomeComponent = (props)=>{
+const HomeComponent = (props) => {
     return (
         <div>
-           <h1>ONLINE  ADVERTISEMENT  SYSTEM </h1>
+            <HeaderComponent></HeaderComponent>
+            <Carouselcomponent></Carouselcomponent>
         </div>
-       
+
 
     );
 }

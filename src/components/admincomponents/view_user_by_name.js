@@ -3,6 +3,7 @@ import {useSelector,useDispatch} from 'react-redux';
 import ViewUserAction from '../../actions/admin_actions/view_user_by_name_action';
 import '../../css/read_advertise_by_title.css'
 import {useRef} from 'react';
+import LogOutComponent from '../admin_logout_header';
 
 let dispatch;
 const ViewUserComponent = (props) => {
@@ -23,6 +24,7 @@ const ViewUserComponent = (props) => {
 
     return(
         <div>
+            <LogOutComponent></LogOutComponent>
             <center>
             <form onSubmit={handleSubmit}>
                 <div className="container">
@@ -71,10 +73,6 @@ function renderTableData(userList){
                 <td>{address}</td>
                 <td>{emailid}</td>
                 <td>{contactno}</td>
-               {/*  <td>
-                    <button className="btn-sm btn-info shadow-none">Edit</button>
-                    <button className="btn-sm btn-danger shadow-none">Delete</button>
-                </td> */}
             </tr>
         )
     })

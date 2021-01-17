@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ViewByCategoryNameAction from '../../actions/admin_actions/view_by_category_name';
 import '../../css/view_category_by_name.css'
+import LogOutComponent from '../admin_logout_header';
 
 
 let dispatch;
@@ -24,6 +25,7 @@ const ViewCategoryByNameComponent = (props) => {
 
     return (
         <div>
+            <LogOutComponent></LogOutComponent>
             <center>
                 <form onSubmit={handleSubmit} onMouseMove={EnableDisable}>
                     <div className="container">

@@ -1,0 +1,10 @@
+.option-bar
+{
+    padding: 10px;
+    text-align: center;
+}
+
+.tab-content
+{
+    position: fixed;
+}

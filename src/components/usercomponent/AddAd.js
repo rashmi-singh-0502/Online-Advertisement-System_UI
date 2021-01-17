@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {addAd}  from '../../actions/user_actions/advertiseAction';
+import LogOutComponent from '../user_logout_header'
 class AddAd extends Component {
     state = {
         title: '',
@@ -27,6 +28,8 @@ class AddAd extends Component {
 
     render(){
         return(
+            <div>
+                <LogOutComponent></LogOutComponent>
             <div className="card-body">
             <div className="form-container">
                 <form onSubmit={this.handleOnSubmit}>
@@ -59,6 +62,7 @@ class AddAd extends Component {
                     </div>
                 </form>
                 </div>
+            </div>
             </div>
         );
         function validateprice(event){

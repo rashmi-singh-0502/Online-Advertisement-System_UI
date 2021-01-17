@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../../css/view_category_list.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ShowCategoryAction from '../../actions/admin_actions/view_category_list';
+import LogOutComponent from '../admin_logout_header';
 import DeleteCategoryAction from '../../actions/admin_actions/delete_category'
 
 
@@ -33,6 +34,7 @@ const ViewCategoryListComponent = (props) => {
 
   return (
     <div>
+      <LogOutComponent></LogOutComponent>
       <center>
        <h3>CATEGORY LIST</h3>
        </center>
