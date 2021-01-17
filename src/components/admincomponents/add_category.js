@@ -77,7 +77,7 @@ export const AddCategoryComponent = (props) => {
 
     /* redirect the user to home page */
 
-    history.push('/');
+    history.push('/admin-services');
   };
 
   function EnableDisable(event) {
