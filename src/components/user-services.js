@@ -5,6 +5,7 @@ import SearchComponent from '../components/usercomponent/searchadvertisecomponen
 import GetAdvertiseListComponent from '../components/usercomponent/read_advertise_list';
 import ReadByAdvertiseTitleComponent from '../components/usercomponent/read_advertise_by_title';
 import AddUser from './usercomponent/AddUser';
+<<<<<<< HEAD
 import {Link} from 'react-router-dom';
 import '../css/user-services.css';
 
@@ -31,6 +32,14 @@ const UserServicesComponent = (props)=>{
                 pathname: '/searchadvertise'
                 
             }}>Search Advertise</Link></a>&nbsp;&nbsp;&nbsp;&nbsp;
+=======
+import LogOutComponent from '../components/user_logout';
+
+const UserServicesComponent = (props)=>{
+    return (
+        <div>
+            <LogOutComponent></LogOutComponent>
+>>>>>>> 3e48097eb26f442524ed714d1b818d6d1e800924
             <Tabs defaultActiveKey="User" id="uncontrolled-tab-example">
                 {/* <Tab eventKey="User Profile" title="Register into User Profile"> 
                 <AddUser></AddUser>
