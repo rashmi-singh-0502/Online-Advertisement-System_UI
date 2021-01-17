@@ -17,7 +17,7 @@ import GetAdvertiseListComponent from './components/usercomponent/read_advertise
 import ReadAdvertiseByTitleComponent from './components/usercomponent/read_advertise_by_title'
 import AddUser from './components/usercomponent/AddUser'
 import SearchComponent from './components/usercomponent/searchadvertisecomponent'
-
+import AddAd from './components/usercomponent/AddAd'
 
 
 
@@ -75,7 +75,7 @@ function App() {
         <Route path='/viewadvertiselist' component={GetAdvertiseListComponent}></Route>
         <Route path='/viewadvertisebytitle' component={ReadAdvertiseByTitleComponent}></Route>
         <Route path='/registeruser' component={AddUser}></Route>
-        <Route path='/postadvertise'></Route>
+        <Route path='/postadvertise' component={AddAd}></Route>
         <Route path='/searchadvertise' component={SearchComponent}></Route>
 
 

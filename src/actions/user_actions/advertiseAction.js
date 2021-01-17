@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-export const getUsers = () => {
+export const getAds = () => {
     return (dispatch) => {
-        axios.get('http://localhost:3000/users')
+        axios.get('http://localhost:3000/advertise')
         .then(response => {
             console.log(response);
             dispatch({
-                type: 'LIST_USERS',
+                type: 'LIST_ADS',
                 payload: response.data
             })
         })
@@ -16,19 +16,18 @@ export const getUsers = () => {
     }
 }
 
-export const setUser = userId => {
+export const setAd = adId => {
     return {
-        type: 'SET_USER',
-        payload: userId
+        type: 'SET_AD',
+        payload: adId
     }
 }
-
-export const addUser = (userObj) => {
+export const addAd = adObj => {
     return (dispatch) => {
-        axios.post('http://localhost:8080/oas1/users', userObj)
+        axios.post('http://localhost:8080/oas/advertises', adObj)
         .then(response => {
             dispatch({
-                type: 'ADD_USER',
+                type: 'ADD_ADVERTISE',
                 payload: response.data
             }) 
         })

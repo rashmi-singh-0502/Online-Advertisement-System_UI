@@ -19,15 +19,18 @@ const globalReducer = (state = initialState, action) => {
                         return {...state, users: action.payload};
         case "SET_USER":
                         return {...state, userId: action.payload};
-        case "ADD_USER":
-                    const users = state.users.concat(action.payload);
-                    return {...state, users};
         case "View_User":
             return action.payload;
         case 'DELETE_ADVERTISE':
              return action.payload;
+        case 'ADD_USER':
+                const users = state.users.concat(action.payload);
+                return {...state, users};
+        case 'ADD_ADVERTISE':
+                const adv=state.adv.concat(action.payload);
+                return {...state, adv};
         default:
-                        return [];
+                return [];
     }
 }
 
