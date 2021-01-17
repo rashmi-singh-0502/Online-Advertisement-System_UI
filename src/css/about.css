@@ -1,0 +1,30 @@
+.back_image
+{
+    /* position: relative;
+    height: 230px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    object-fit: cover;
+    width: 500px; */
+
+    object-fit: cover;
+    width: 700px;
+    height: 300px;
+}
+
+.row
+{
+    box-sizing: border-box;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .back_image
+{
+    position: fixed;
+
+} */

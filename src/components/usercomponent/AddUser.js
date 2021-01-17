@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import  addUser  from '../../actions/user_actions/userAction';
+import LogOutComponent from '../user_logout_header';
 
 class AddUser extends Component {
     state = {
@@ -31,6 +32,8 @@ class AddUser extends Component {
     }
     render(){
         return(
+            <div>
+                <LogOutComponent></LogOutComponent>
             <div className="card-body">
             <form className="form">
                 <h3>Get started with us today! Create your account by filling out the information below.</h3><br></br>
@@ -77,6 +80,7 @@ class AddUser extends Component {
             </div>
             </h4>
             </form>
+            </div>
             </div>
         );
     

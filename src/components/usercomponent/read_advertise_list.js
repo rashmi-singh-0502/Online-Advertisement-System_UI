@@ -3,6 +3,8 @@ import {useSelector,useDispatch} from 'react-redux';
 import getAdvertiseListAction from '../../actions/user_actions/read_advertise_list_action';
 import DeleteAdvertiseAction from '../../actions/user_actions/delete_advertise_by_id_action';
 import '../../css/read_advertise_list.css';
+import LogOutComponent from '../user_logout_header';
+
 let dispatch;
 const GetAdvertiseListComponent = (props) => {
     let advertiseList = useSelector(state => state);
@@ -23,8 +25,8 @@ const GetAdvertiseListComponent = (props) => {
     }
     return(
         <div>
+            <LogOutComponent></LogOutComponent>
             <center>
-                {/* <form action="/"> */}
                 <table border="2">
                     <thead class="indigo white-text">
                         <tr>
@@ -40,7 +42,6 @@ const GetAdvertiseListComponent = (props) => {
                         {renderTableData(advertiseList)}
                     </tbody>
                 </table>
-                {/* </form> */}
             </center>
         </div>
     );
@@ -58,10 +59,7 @@ function renderTableData(advertiseList){
                 <td>{name}</td>
                 <td>{description}</td>
                 <td>{price}</td>
-                {<td><button className="btn btn-outline-danger" onClick={(e) => deleteAdvertise(e,ad_id)}>Delete</button></td>/* <td>
-                    <button className="btn-sm btn-info shadow-none">Edit</button>
-                    <button className="btn-sm btn-danger shadow-none">Delete</button>
-                </td> */}
+                <td><button className="btn-xs btn-danger shadow-none deletebutton" onClick={(e) => deleteAdvertise(e,ad_id)}>Delete</button></td>
             </tr>
         )
     })

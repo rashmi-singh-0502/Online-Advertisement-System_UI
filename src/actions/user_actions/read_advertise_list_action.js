@@ -11,5 +11,3 @@ let getAdvertiseListAction = (props) =>
 };
 
 export default getAdvertiseListAction;
-
-/* /${props.ad_id}/${props.title}/${props.category}/${props.description}/${props.price} */

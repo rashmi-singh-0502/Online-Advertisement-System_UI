@@ -1,13 +1,27 @@
 import { Jumbotron, Button, Nav, Card, Container, Row, Col } from 'react-bootstrap';
+import '../css/about.css';
+import HeaderComponent from './header';
 
 const AboutUsComponent = () => {
-    return (
-        <div>
-            <p>
-                <Button class="btn btn-primary btn-lg" variant="dark" href="https://github.com/rashmi-singh-0502/Online-Advertisement-System_UI" target="_blank">Check code on Github</Button>
-            </p>
-        </div>
-    );
+  return (
+    <div>
+      <HeaderComponent></HeaderComponent>
+      <div>
+        <img className="back_image" src="https://www.susangreenecopywriter.com/wp-content/uploads/2013/01/iStock_000039291924_Medium.jpg"></img>
+      </div>
+      <br></br>
+      <div class="row">
+        The OAS Group operates a
+        network of online advertisng platforms in over 10 countries,
+        building market leading classifieds marketplaces that empower millions of people to buy,
+        sell and create prosperity in local communities. With over 300 million monthly users worldwide
+        , OAS Group makes it fast and easy to buy and sell almost anything online, such as household goods,
+        phones, cars and houses. Through consumer brands including Avito, dubizzle,
+        letgo, OAS, Stradia and Storia, more than 10 million things are listed on
+        its market-leading apps and platforms every single month.
+      </div>
+    </div>
+  );
 }
 
 

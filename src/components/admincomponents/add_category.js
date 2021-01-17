@@ -7,6 +7,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import  '../../css/add_category.css';
 import addCategoryAction from '../../actions/admin_actions/view_category_list';
 import { useHistory } from "react-router-dom";
+import LogOutComponent from '../admin_logout_header';
 
 
 let dispatch;
@@ -23,8 +24,10 @@ export const AddCategoryComponent = (props) =>{
      
 
    return(
+     <div>
+       <LogOutComponent></LogOutComponent>
        <body>
-        <div class="testbox">
+        <div class="testbox shadow-none">
         <form onSubmit={handleSubmit}>
             
                 <div class="banner">
@@ -50,7 +53,7 @@ export const AddCategoryComponent = (props) =>{
             </form>
         </div>
      </body>
-  
+     </div>
        
        
     );

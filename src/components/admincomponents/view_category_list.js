@@ -3,6 +3,7 @@ import {useSelector, useDispatch } from 'react-redux';
 import '../../css/view_category_list.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ShowCategoryAction from '../../actions/admin_actions/view_category_list';
+import LogOutComponent from '../admin_logout_header';
 
 
 let dispatch ;
@@ -26,6 +27,7 @@ let dispatch ;
     }
     return(
 <div>
+<LogOutComponent></LogOutComponent>
 <center>
     {/* <form action="/"> */}
   

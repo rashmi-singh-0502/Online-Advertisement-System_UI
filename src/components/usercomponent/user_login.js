@@ -1,118 +1,106 @@
 import { useHistory } from "react-router-dom";
-/* import Header from "./header"; */
-/* import AdminServicesComponent from './components/admin-services' */
 import '../../css/admin_login.css';
-
-
+import HeaderComponent from '../header';
 
 let history;
+let validUserName = false;
+let validPassword = false;
+let set;
+
 const UserServices = (props) => {
-    history = useHistory();
-    return(
-        <div>
-{/* <Header/> */}
-
-<form  className="container shadow-none">
-
-                {/* <h3>Log in</h3> */}
-
-                <div className="form-group">
-                    <label>Username</label>
-                    <input type="username" className="form-control" placeholder="Enter username" onBlur={validateUserName} required></input>
-                    <small id="namevalid" class="form-text text-danger invalid-feedback">
-        username is invalid
+  history = useHistory();
+  return (
+    <div>
+      <HeaderComponent></HeaderComponent>
+      <form className="container shadow-none" onSubmit={loginUser} onMouseMove={EnableDisable}>
+        <div className="form-group">
+          <label>Username</label>
+          <input type="username" className="form-control" placeholder="Enter username" onBlur={validateUserName} required></input>
+          <small id="namevalid" class="form-text text-danger invalid-feedback">
+            Username is invalid
        </small>
-                </div>
+        </div>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" onBlur={validatePassword} required/>
-                    <small id="namevalid" class="form-text text-danger invalid-feedback">
-        Password is invalid
+        <div className="form-group">
+          <label>Password</label>
+          <input type="password" className="form-control" placeholder="Enter password" onBlur={validatePassword} required />
+          <small id="namevalid" class="form-text text-danger invalid-feedback">
+            Password is invalid
        </small>
-                </div>
+        </div>
 
-                {/* <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                    </div>
-                </div> */}
- 
-                <button type="submit" className="btn-success btn-sm shadow-none" onClick={loginUser} href="/user-services">Log in</button>
-                <p className="forgot-password text-center">
-                <a href="#">Forgot password?</a>
-                </p>
+        <button type="submit" className="btn-success btn-sm shadow-none" disabled="disabled" id="btnsubmit">Log in</button>
+        <p className="forgot-password text-center">
+          <a href="#">Forgot password?</a>
+        </p>
 
-                <p>New User?</p>
-                <button type="submit" className="btn-success btn-sm shadow-none">Register</button>
-
-
-
-            </form>
-            </div>
-    )
+        <p>New User?</p>
+        <button type="submit" className="btn-success btn-sm shadow-none" onClick={registerUser}>Register</button>
+      </form>
+    </div>
+  )
 }
 
-function loginUser(){
-    history.push('/user-services');
+function loginUser() {
+  history.push('/user-services');
 }
 
-let validUserName=false;
+function registerUser() {
+  history.push('/registeruser');
+}
 
+function EnableDisable(event) {
+  event.preventDefault();
+  var btnsubmit = document.getElementById("btnsubmit");
+  console.log("handle disabled called");
+  console.log("validUserName", validUserName);
+  console.log("validPassword", validPassword);
 
-function validateUserName(event){
+  if (validUserName && validPassword) {
+    set = false;
+    console.log("set", set);
+    btnsubmit.disabled = false;
+  }
+  else {
+    btnsubmit.disabled = true;
+  }
+}
 
-    const data = event.target.value;
-    console.log("target",data);
-   
-    let regex = /[a-zA-Z]{3,10}$/;
-    let inputdata = data;
-    let str = inputdata.trim();
-    console.log(regex, str);
-    if (regex.test(str) && str != "") {
-  
-      event.target.classList.remove('custom-invalid');
-      event.target.classList.add('custom-valid');
+function validateUserName(event) {
+  const data = event.target.value;
+  console.log("target", data);
 
-      validUserName=true;
-  
-    } else {
-  
-      event.target.classList.remove('custom-valid');
-      event.target.classList.add('custom-invalid');
+  if (data != "") {
+    event.target.classList.remove('custom-invalid');
+    event.target.classList.add('custom-valid');
 
-      validUserName=true;
-    }
+    validUserName = true;
+
+  } else {
+    event.target.classList.remove('custom-valid');
+    event.target.classList.add('custom-invalid');
+
+    validUserName = true;
+  }
 };
 
-let validPassword=false;
+function validatePassword(event) {
+  const data = event.target.value;
+  console.log("target", data);
 
-function validatePassword(event){
+  if (data != "") {
+    event.target.classList.remove('custom-invalid');
+    event.target.classList.add('custom-valid');
 
-    const data = event.target.value;
-    console.log("target",data);
-   
-    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-    let inputdata = data;
-    let str = inputdata.trim();
-    console.log(regex, str);
-    if (regex.test(str) && str != "") {
-  
-      event.target.classList.remove('custom-invalid');
-      event.target.classList.add('custom-valid');
+    validPassword = true;
 
-      validPassword=true;
-  
-    } else {
-  
-      event.target.classList.remove('custom-valid');
-      event.target.classList.add('custom-invalid');
+  } else {
 
-      validPassword=false;
-    }
+    event.target.classList.remove('custom-valid');
+    event.target.classList.add('custom-invalid');
 
-
+    validPassword = false;
+  }
 };
 
 export default UserServices;

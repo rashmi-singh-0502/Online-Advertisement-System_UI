@@ -1,20 +1,20 @@
 import { useHistory } from "react-router-dom";
-/* import Header from "./header"; */
-/* import AdminServicesComponent from './components/admin-services' */
 import '../../css/admin_login.css';
-
-
+import HeaderComponent from '../header';
 
 let history;
+let validUserName = false;
+let validPassword = false;
+let set;
+
+
 const Services = (props) => {
   history = useHistory();
   return (
     <div>
-      {/* <Header/> */}
+      <HeaderComponent></HeaderComponent>
+      <form className="container shadow-none" onSubmit={loginAdmin} onMouseMove={EnableDisable}>
 
-      <form className="container shadow-none">
-
-        {/* <h3>Log in</h3> */}
 
         <div className="form-group">
           <label>Username</label>
@@ -32,14 +32,8 @@ const Services = (props) => {
        </small>
         </div>
 
-        {/* <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                    </div>
-                </div> */}
 
-        <button type="submit" className="btn btn-success btn-sm shadow-none" onClick={loginAdmin} href="/admin-services">Log in</button>
+        <button type="submit" className="btn-success btn-sm shadow-none" disabled="disabled" id="btnsubmit">Log in</button>
         <p className="forgot-password text-center">
           <a href="#">Forgot password?</a>
         </p>
@@ -52,19 +46,30 @@ function loginAdmin() {
   history.push('/admin-services');
 }
 
-let validUserName = false;
-
+function EnableDisable(event)
+{
+  event.preventDefault();
+  var btnsubmit=document.getElementById("btnsubmit");
+  console.log("handle disabled called");
+  console.log("validUserName",validUserName);
+  console.log("validPassword",validPassword);
+  
+  if(validUserName&&validPassword)
+  {  
+    set=false;
+    console.log("set",set);
+    btnsubmit.disabled=false;
+  }
+  else
+  {
+    btnsubmit.disabled=true;
+  }
+}
 
 function validateUserName(event) {
-
   const data = event.target.value;
   console.log("target", data);
 
-  /* let regex = /[a-zA-Z]{3,10}$/;
-  let inputdata = data;
-  let str = inputdata.trim();
-  console.log(regex, str);
-  if (regex.test(str) && str != "") { */
   if (data != "") {
     event.target.classList.remove('custom-invalid');
     event.target.classList.add('custom-valid');
@@ -72,7 +77,6 @@ function validateUserName(event) {
     validUserName = true;
 
   } else {
-
     event.target.classList.remove('custom-valid');
     event.target.classList.add('custom-invalid');
 
@@ -80,18 +84,10 @@ function validateUserName(event) {
   }
 };
 
-let validPassword = false;
-
 function validatePassword(event) {
-
   const data = event.target.value;
   console.log("target", data);
 
-  /* let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-  let inputdata = data;
-  let str = inputdata.trim();
-  console.log(regex, str);
-  if (regex.test(str) && str != "") { */
   if (data != "") {
     event.target.classList.remove('custom-invalid');
     event.target.classList.add('custom-valid');
