@@ -1,14 +1,13 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../css/header.css'
 
-function HeaderComponent ()
-{
-    return (
-        <div>
-            <Navbar className="header_back" variant="dark" expand="lg">
+function HeaderComponent() {
+  return (
+    <div>
+      <Navbar className="header_back" variant="dark" expand="lg">
         <Navbar.Brand href="/">
           <img
             src="/oas_logo.PNG"
@@ -35,8 +34,8 @@ function HeaderComponent ()
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-        </div>
-    );
+    </div>
+  );
 }
 
 export default HeaderComponent;

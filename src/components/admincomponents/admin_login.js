@@ -13,9 +13,9 @@ const Services = (props) => {
   return (
     <div>
       <HeaderComponent></HeaderComponent>
+      <br></br>
+      <h3>ADMIN LOGIN</h3>
       <form className="container shadow-none" onSubmit={loginAdmin} onMouseMove={EnableDisable}>
-
-
         <div className="form-group">
           <label>Username</label>
           <input type="username" className="form-control" placeholder="Enter username" onBlur={validateUserName} required></input>
@@ -39,6 +39,7 @@ const Services = (props) => {
         </p>
       </form>
     </div>
+
   )
 }
 
@@ -46,23 +47,20 @@ function loginAdmin() {
   history.push('/admin-services');
 }
 
-function EnableDisable(event)
-{
+function EnableDisable(event) {
   event.preventDefault();
-  var btnsubmit=document.getElementById("btnsubmit");
+  var btnsubmit = document.getElementById("btnsubmit");
   console.log("handle disabled called");
-  console.log("validUserName",validUserName);
-  console.log("validPassword",validPassword);
-  
-  if(validUserName&&validPassword)
-  {  
-    set=false;
-    console.log("set",set);
-    btnsubmit.disabled=false;
+  console.log("validUserName", validUserName);
+  console.log("validPassword", validPassword);
+
+  if (validUserName && validPassword) {
+    set = false;
+    console.log("set", set);
+    btnsubmit.disabled = false;
   }
-  else
-  {
-    btnsubmit.disabled=true;
+  else {
+    btnsubmit.disabled = true;
   }
 }
 

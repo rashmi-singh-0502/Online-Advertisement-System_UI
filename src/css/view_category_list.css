@@ -10,12 +10,12 @@ html, body {
     color:  black;
     line-height: 22px;
     }
-    h1,h2,h3 {
-    position: absolute;
+    h3 {
+    position: center;
     margin: 0;
     line-height: 55px;
     font-size: 55px;
-    color: #fff;
+    color: black;
     z-index: 2;
     }
     .btn,.btn-info,.btn-danger
@@ -23,7 +23,7 @@ html, body {
     margin: 5px;
     height: 50px;
     width: 80px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .glyphicon {
@@ -41,7 +41,7 @@ html, body {
     width: 100%;
     padding: 20px;
     border-radius: 6px;
-    background: #fff;
+    background:white;
     box-shadow: 0 0 30px 0 #52a347; 
     }
     .banner {
@@ -65,7 +65,7 @@ html, body {
     
   
     
-    @media (min-width: 568px) {
+  /*   @media (min-width: 568px) {
     .name-item {
     display: flex;
     flex-wrap: wrap;
@@ -75,21 +75,4 @@ html, body {
     width: calc(50% - 20px);
     }
     }
-    #customers {
-      font-family: Arial, Helvetica, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    #customers th {
-      border: 1px solid  black;
-      padding: 8px;
-    }
-
-    #customers th {
-      padding-top: 5px;
-      padding-bottom: 5px;
-      text-align: left;
-      background-color: lavender;
-      color: white;
-    }
+    */

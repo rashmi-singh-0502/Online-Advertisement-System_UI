@@ -1,19 +1,16 @@
-/* *
+table
 {
-    font-size: 12px;
-} */
-.table_view
-{
-    /* align-items: center; */
+    align-items: center;
     text-align: center;
     border: 1px solid black;
-    /* margin-top: 30px; */
-    height: 100px !important;
+    margin-top: 30px;
+    height: 200px;
 }
 
 thead
 {
     background-color: lavender;
+    color:black;
     
 }
 
@@ -21,6 +18,7 @@ th
 {
     height: 50px;
     padding: 10px;
+    color:black;
 }
 
 .btn,.btn-info,.btn-danger
@@ -31,19 +29,33 @@ th
     font-size: 20px;
 }
 
-.container_search
+.container
 {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     background-color: lightgray;
     height: 200px;
     width: 400px;
 }
+
 .search-box
 {
     padding: 20px;
     align-items: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+}
+.custom-valid {
+    border-color: green;
+    display: block;
+}
+
+.custom-invalid {
+    width: 100%;
+    border-color: #dc3545;
+}
+
+.custom-invalid~.invalid-feedback {
+    display: block;
 }
 
 p{

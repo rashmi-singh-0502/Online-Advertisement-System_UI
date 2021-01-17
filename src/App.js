@@ -19,10 +19,14 @@ import SearchComponent from './components/usercomponent/search_advertise'
 import AboutUsComponent from './components/about';
 import HeaderComponent from './components/header';
 import ViewUserComponent from './components/admincomponents/view_user_by_name';
-/* import ViewCategoryByNameComponent from './components/admincomponents/view_category_by_name'
-import ShowUsers from './components/admincomponents/view_user_list' */
 import AddCategoryComponent from './components/admincomponents/add_category';
 import ViewCategoryListComponent from './components/admincomponents/view_category_list';
+import ViewCategoryByNameComponent from './components/admincomponents/view_category_by_name';
+import ShowUsers from './components/admincomponents/view_user_list'
+import AddAd from './components/usercomponent/AddAd'
+
+
+
 
 function App() {
   return (
@@ -30,23 +34,25 @@ function App() {
       <FooterComponent></FooterComponent>
       {/* Switching the content from nav operations */}
       <Switch>
-        {/* <Route path='/' component={Carouselcomponent} exact /> */}
+         {/*Route is the conditionally 
+        shown component that renders some
+         UI when its path matches the current URL.*/}
         <Route path='/admin_login' component={Services} exact />
         <Route path='/admin-services' component={AdminServicesComponent} exact />
         <Route path='/user_login' component={UserServices} exact />
         <Route path='/user-services' component={UserServicesComponent} exact />
-        <Route path='/viewadvertiselist' component={GetAdvertiseListComponent} exact></Route>
-        <Route path='/viewadvertisebytitle' component={ReadAdvertiseByTitleComponent} exact></Route>
-        <Route path='/registeruser' component={AddUser} exact></Route>
-        <Route path='/postadvertise'></Route>
-        <Route path='/searchadvertise' component={SearchComponent} exact></Route>
         <Route path='/aboutus' component={AboutUsComponent} exact></Route>
-        <Route path='/addcategorycomponent' component={AddCategoryComponent} exact />
-        <Route path='/viewcategorylist' component={ViewCategoryListComponent} exact />
-        {/* <Route path='/viewcategorybyname' component={ViewCategoryByNameComponent} exact />
-        <Route path='/viewuserlist' component={ShowUsers} exact /> */}
         <Route path='/viewuserbyname' component={ViewUserComponent} exact />
         <Route path='/' component={HomeComponent} exact></Route>
+        <Route path='/viewadvertiselist' component={GetAdvertiseListComponent}></Route>
+        <Route path='/viewadvertisebytitle' component={ReadAdvertiseByTitleComponent}></Route>
+        <Route path='/registeruser' component={AddUser}></Route>
+        <Route path='/postadvertise' component={AddAd}></Route>
+        <Route path='/searchadvertise' component={SearchComponent}></Route>
+        <Route path='/addcategorycomponent' component={AddCategoryComponent} exact />
+        <Route path='/viewcategorylist' component={ViewCategoryListComponent} exact />
+        <Route path='/viewcategorybyname' component={ViewCategoryByNameComponent} exact />
+        <Route path='/viewuserlist' component={ShowUsers} exact />
       </Switch>
     </div>
   );

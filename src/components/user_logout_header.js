@@ -34,7 +34,7 @@ const LogOutComponent = (props) => {
          <Navbar.Toggle aria-controls="basic-navbar-nav" />
          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-           <Nav.Link href="/" id="logout">Logout</Nav.Link>
+               <Nav.Link href="/" id="logout">Logout</Nav.Link>
             </Nav>
          </Navbar.Collapse>
       </Navbar>

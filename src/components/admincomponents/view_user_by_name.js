@@ -73,10 +73,6 @@ function renderTableData(userList){
                 <td>{address}</td>
                 <td>{emailid}</td>
                 <td>{contactno}</td>
-               {/*  <td>
-                    <button className="btn-sm btn-info shadow-none">Edit</button>
-                    <button className="btn-sm btn-danger shadow-none">Delete</button>
-                </td> */}
             </tr>
         )
     })
