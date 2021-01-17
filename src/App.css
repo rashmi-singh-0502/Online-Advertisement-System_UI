@@ -53,4 +53,15 @@
   background-color: rgb(104, 56, 148);
   text-align: center;
   color: white;
+  padding: 13px;
+}
+
+.mr-auto
+{
+  font-size: 15px;
+}
+
+#basic-nav-dropdown
+{
+  font-size: 15px;
 }

@@ -7,6 +7,7 @@ table
     text-align: center;
     border: 1px solid black;
     margin-top: 30px;
+    height: 300px;
 }
 
 thead
@@ -18,7 +19,7 @@ thead
 th
 {
     height: 50px;
-    padding: 10px;
+    padding: auto;
 }
 
 .btn,.btn-info,.btn-danger
@@ -32,5 +33,10 @@ th
 .glyphicon {
     font-size: 20px;
     margin-right: 3px;
+}
+
+td{
+    word-wrap: break-word;
+    padding: 10px;
 }
 

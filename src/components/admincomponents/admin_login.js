@@ -7,104 +7,104 @@ import '../../css/admin_login.css';
 
 let history;
 const Services = (props) => {
-    history = useHistory();
-    return(
-        <div>
-{/* <Header/> */}
+  history = useHistory();
+  return (
+    <div>
+      {/* <Header/> */}
 
-<form  className="container shadow-none">
+      <form className="container shadow-none">
 
-                {/* <h3>Log in</h3> */}
+        {/* <h3>Log in</h3> */}
 
-                <div className="form-group">
-                    <label>Username</label>
-                    <input type="username" className="form-control" placeholder="Enter username" onBlur={validateUserName} required></input>
-                    <small id="namevalid" class="form-text text-danger invalid-feedback">
-        username is invalid
+        <div className="form-group">
+          <label>Username</label>
+          <input type="username" className="form-control" placeholder="Enter username" onBlur={validateUserName} required></input>
+          <small id="namevalid" class="form-text text-danger invalid-feedback">
+            username is blank
        </small>
-                </div>
+        </div>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" onBlur={validatePassword} required/>
-                    <small id="namevalid" class="form-text text-danger invalid-feedback">
-        Password is invalid
+        <div className="form-group">
+          <label>Password</label>
+          <input type="password" className="form-control" placeholder="Enter password" onBlur={validatePassword} required />
+          <small id="namevalid" class="form-text text-danger invalid-feedback">
+            Password is blank
        </small>
-                </div>
+        </div>
 
-                {/* <div className="form-group">
+        {/* <div className="form-group">
                     <div className="custom-control custom-checkbox">
                         <input type="checkbox" className="custom-control-input" id="customCheck1" />
                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
                 </div> */}
- 
-                <button type="submit" className="btn btn-success btn-sm shadow-none" onClick={loginAdmin} href="/admin-services">Log in</button>
-                <p className="forgot-password text-center">
-                <a href="#">Forgot password?</a>
-                </p>
-            </form>
-            </div>
-    )
+
+        <button type="submit" className="btn btn-success btn-sm shadow-none" onClick={loginAdmin} href="/admin-services">Log in</button>
+        <p className="forgot-password text-center">
+          <a href="#">Forgot password?</a>
+        </p>
+      </form>
+    </div>
+  )
 }
 
-function loginAdmin(){
-    history.push('/admin-services');
+function loginAdmin() {
+  history.push('/admin-services');
 }
 
-let validUserName=false;
+let validUserName = false;
 
 
-function validateUserName(event){
+function validateUserName(event) {
 
-    const data = event.target.value;
-    console.log("target",data);
-   
-    let regex = /[a-zA-Z]{3,10}$/;
-    let inputdata = data;
-    let str = inputdata.trim();
-    console.log(regex, str);
-    if (regex.test(str) && str != "") {
-  
-      event.target.classList.remove('custom-invalid');
-      event.target.classList.add('custom-valid');
+  const data = event.target.value;
+  console.log("target", data);
 
-      validUserName=true;
-  
-    } else {
-  
-      event.target.classList.remove('custom-valid');
-      event.target.classList.add('custom-invalid');
+  /* let regex = /[a-zA-Z]{3,10}$/;
+  let inputdata = data;
+  let str = inputdata.trim();
+  console.log(regex, str);
+  if (regex.test(str) && str != "") { */
+  if (data != "") {
+    event.target.classList.remove('custom-invalid');
+    event.target.classList.add('custom-valid');
 
-      validUserName=true;
-    }
+    validUserName = true;
+
+  } else {
+
+    event.target.classList.remove('custom-valid');
+    event.target.classList.add('custom-invalid');
+
+    validUserName = true;
+  }
 };
 
-let validPassword=false;
+let validPassword = false;
 
-function validatePassword(event){
+function validatePassword(event) {
 
-    const data = event.target.value;
-    console.log("target",data);
-   
-    let regex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]$/;
-    let inputdata = data;
-    let str = inputdata.trim();
-    console.log(regex, str);
-    if (regex.test(str) && str != "") {
-  
-      event.target.classList.remove('custom-invalid');
-      event.target.classList.add('custom-valid');
+  const data = event.target.value;
+  console.log("target", data);
 
-      validPassword=true;
-  
-    } else {
-  
-      event.target.classList.remove('custom-valid');
-      event.target.classList.add('custom-invalid');
+  /* let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  let inputdata = data;
+  let str = inputdata.trim();
+  console.log(regex, str);
+  if (regex.test(str) && str != "") { */
+  if (data != "") {
+    event.target.classList.remove('custom-invalid');
+    event.target.classList.add('custom-valid');
 
-      validPassword=false;
-    }
+    validPassword = true;
+
+  } else {
+
+    event.target.classList.remove('custom-valid');
+    event.target.classList.add('custom-invalid');
+
+    validPassword = false;
+  }
 
 
 };

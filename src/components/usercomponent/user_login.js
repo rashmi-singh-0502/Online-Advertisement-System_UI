@@ -87,7 +87,7 @@ function validatePassword(event){
     const data = event.target.value;
     console.log("target",data);
    
-    let regex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]$/;
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     let inputdata = data;
     let str = inputdata.trim();
     console.log(regex, str);
