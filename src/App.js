@@ -17,6 +17,10 @@ import GetAdvertiseListComponent from './components/usercomponent/read_advertise
 import ReadAdvertiseByTitleComponent from './components/usercomponent/read_advertise_by_title'
 import AddUser from './components/usercomponent/AddUser'
 import SearchComponent from './components/usercomponent/searchadvertisecomponent'
+import AddCategoryComponent from './components/admincomponents/add_category';
+import ViewCategoryListComponent from './components/admincomponents/view_category_list';
+import ViewCategoryByNameComponent from './components/admincomponents/view_category_by_name';
+import ShowUsers from './components/admincomponents/view_user_list'
 
 
 
@@ -67,6 +71,9 @@ function App() {
 
       {/* Switching the content from nav operations */}
       <Switch>
+         {/*Route is the conditionally 
+        shown component that renders some
+         UI when its path matches the current URL.*/}
         <Route path='/' component={Carouselcomponent} exact />
         <Route path='/admin_login' component={Services} exact />
         <Route path='/admin-services' component={AdminServicesComponent} exact />
@@ -77,6 +84,10 @@ function App() {
         <Route path='/registeruser' component={AddUser}></Route>
         <Route path='/postadvertise'></Route>
         <Route path='/searchadvertise' component={SearchComponent}></Route>
+        <Route path='/addcategorycomponent' component={AddCategoryComponent} exact />
+        <Route path='/viewcategorylist' component={ViewCategoryListComponent} exact />
+        <Route path='/viewcategorybyname' component={ViewCategoryByNameComponent} exact />
+        <Route path='/viewuserlist' component={ShowUsers} exact />
 
 
 

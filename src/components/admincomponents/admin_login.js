@@ -1,6 +1,4 @@
 import { useHistory } from "react-router-dom";
-/* import Header from "./header"; */
-/* import AdminServicesComponent from './components/admin-services' */
 import '../../css/admin_login.css';
 
 
@@ -10,11 +8,11 @@ const Services = (props) => {
   history = useHistory();
   return (
     <div>
-      {/* <Header/> */}
+      <br></br>
+         <h3>ADMIN LOGIN</h3>  
 
       <form className="container shadow-none">
 
-        {/* <h3>Log in</h3> */}
 
         <div className="form-group">
           <label>Username</label>
@@ -45,6 +43,7 @@ const Services = (props) => {
         </p>
       </form>
     </div>
+   
   )
 }
 

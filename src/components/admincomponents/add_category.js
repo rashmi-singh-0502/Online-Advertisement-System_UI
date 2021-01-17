@@ -1,113 +1,159 @@
 import React from 'react';
-import { useRef } from 'react';
 import Category from '../../models/category';
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useDispatch,useSelector } from 'react-redux';
-import  '../../css/add_category.css';
-import addCategoryAction from '../../actions/admin_actions/view_category_list';
+import { useDispatch } from 'react-redux';
+ import '../../css/admin_login.css'; 
+import AddCategoryAction from '../../actions/admin_actions/add_category'
 import { useHistory } from "react-router-dom";
 
-
+let set;
 let dispatch;
 let history;
-export const AddCategoryComponent = (props) =>{
-    
-      dispatch = useDispatch();
-    history = useHistory();
-    /*let categoryList = useSelector(state => state.globalReducer);
+let validCategoryName = false;
+let validCategoryDesc = false;
 
-    dispatch(addCategoryAction());
-   console.log("categoryList in comp: ", categoryList);
-*/
-     
+export const AddCategoryComponent = (props) => {
 
-   return(
-       <body>
-        <div class="testbox">
-        <form onSubmit={handleSubmit}>
-            
-                <div class="banner">
-                    <h1>Add Category</h1>
-                </div>
-                <div class="item">
-                    <p>Category Name</p>
-                        <input type="text" name="name" placeholder="Enter Category Name" onBlur={validateCategoryName} />
-                        <small id="namevalid" class="form-text text-danger invalid-feedback">
-        Category name should only contain character between 3 to 12
+
+ /* dispatch-- is the method used to dispatch actions and trigger state changes to the store*/
+  dispatch = useDispatch();
+  /*  new entry onto the history stack. */
+  history = useHistory();
+
+
+
+  return (
+    <body>
+      {/* <div class="testbox"> */}
+        <form onSubmit={handleSubmit}
+          onMouseMove={EnableDisable}>
+            <center><h3>Add Category</h3>
+          <div class-name="form-group">
+           
+          {/* </div> */}
+       {/*    <div class="item"> */}
+            <p>Category Name</p>
+            <input type="name" id="name" name="name" placeholder="Enter Category Name" onBlur={validateCategoryName} />
+            <small id="namevalid" class="form-text text-danger invalid-feedback">
+              Category name should only contain character between 3 to 12
        </small>
-                </div>
-                <div class="item">
-                    <p>Category Description</p>
-                    <input type="text" name="desc" placeholder="Enter Category Description" onBlur={validateCategoryDescription}/>
-                    <small id="descriptionvalid" class="form-text text-danger invalid-feedback">
-        Category Desciption should only contain character between 3 to 25
+       </div>
+        {/*   </div>
+          <div class="item"> */}
+          <div class-name="form-group">
+            <p>Category Description</p>
+            <input type="description" id="category_desc" name="category_desc" placeholder="Enter Category Description" onBlur={validateCategoryDescription} />
+            <small id="descriptionvalid" class="form-text text-danger invalid-feedback">
+              Category Desciption should only contain character between 3 to 25
        </small>
-                </div>
-                <div class="btn-block">
-          <button type="submit" class="btn btn-primary" href='/' >ADD </button>
-        </div>
-            </form>
-        </div>
-     </body>
-  
-       
-       
-    );
-   
+          </div>
+          </center>
+ 
+          <center>
+            <button class="btn btn-primary " disabled="disabled" id="btnsubmit" >ADD</button>
+          </center>
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        console.log("in handle Submit :",data)
-        const name = data.get('name');
-        const category_desc = data.get('category_desc');
-        console.log(name);
-        console.log(category_desc);
-        const catObj = new Category(name, category_desc);
-        dispatch(addCategoryAction(catObj));
-        history.push('/');
-    };
-    function validateCategoryName(event){
+        </form>
+      {/* </div>*/}
+    </body> 
 
-        const data = event.target.value;
-        console.log("target",data);
-       
-        let regex = /[a-zA-Z]{3,10}$/;
-        let inputdata = data;
-        let str = inputdata.trim();
-        console.log(regex, str);
-        if (regex.test(str) && str != "") {
-      
-          event.target.classList.remove('custom-invalid');
-          event.target.classList.add('custom-valid');
-      
-        } else {
-      
-          event.target.classList.remove('custom-valid');
-          event.target.classList.add('custom-invalid');
-        }
-    };
-    function validateCategoryDescription(event){
 
-        const data = event.target.value;
-        console.log("target",data);
-       
-        let regex = /[a-zA-Z]{3,25}$/;
-        let inputdata = data;
-        let str = inputdata.trim();
-        console.log(regex, str);
-        if (regex.test(str) && str != "") {
-      
-          event.target.classList.remove('custom-invalid');
-          event.target.classList.add('custom-valid');
-      
-        } else {
-      
-          event.target.classList.remove('custom-valid');
-          event.target.classList.add('custom-invalid');
-        }
-    };
+
+  );
+  function handleSubmit(event) {
+
+   /*  The preventDefault() method cancels the event if it is cancelable,
+      meaning that the default action that belongs to the event will not occur. */
+     event.preventDefault();
+    const data = new FormData(event.target);
+    console.log("in handle Submit :", data)
+    const name = data.get('name');
+    const category_desc = data.get('category_desc');
+    console.log(name);
+    console.log(category_desc);
+    const catObj = new Category(name, category_desc);
+    console.log(catObj);
+    dispatch(AddCategoryAction(catObj));
+
+    /* redirect the user to home page */
+
+    history.push('/');
+  };
+
+  function EnableDisable(event) {
+    /*  The preventDefault() method cancels the event if it is cancelable,
+      meaning that the default action that belongs to the event will not occur. */
+    event.preventDefault();
+    var btnsubmit = document.getElementById("btnsubmit");
+
+    console.log("handle disabled called");
+    console.log("validCategoryName", validCategoryName);
+    console.log("validCategoryDesc", validCategoryDesc);
+
+  /* if both the values are true  */
+    if (validCategoryName && validCategoryDesc) {
+
+      set = false;
+      console.log("set", set);
+      btnsubmit.disabled = false;
+    }
+    else {
+      btnsubmit.disabled = true;
+    }
+  }
+
+/* 
+validating category name */
+  function validateCategoryName(event) {
+
+    const data = event.target.value;
+    console.log("target", data);
+
+    let regex = /[a-zA-Z]{3,10}$/;
+    let inputdata = data;
+    let str = inputdata.trim();
+    console.log(regex, str);
+    if (regex.test(str) && str != "") {
+
+      event.target.classList.remove('custom-invalid');
+      event.target.classList.add('custom-valid');
+      validCategoryName = true;
+
+
+    }
+    else {
+
+      event.target.classList.remove('custom-valid');
+      event.target.classList.add('custom-invalid');
+      validCategoryName = false;
+
+    }
+  };
+  /* validating category description */
+  function validateCategoryDescription(event) {
+
+    const data = event.target.value;
+    console.log("target", data);
+
+    let regex = /[a-zA-Z]{3,25}$/;
+    let inputdata = data;
+    let str = inputdata.trim();
+    console.log(regex, str);
+
+    if (regex.test(str) && str != "") {
+
+      event.target.classList.remove('custom-invalid');
+      event.target.classList.add('custom-valid');
+      validCategoryDesc = true;
+
+    }
+    else {
+
+      event.target.classList.remove('custom-valid');
+      event.target.classList.add('custom-invalid');
+      validCategoryDesc = false;
+    }
+  };
 
 
 }

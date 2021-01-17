@@ -11,26 +11,39 @@ const AdminServicesComponent = (props)=>{
     return (
         <div>
             <LogOutComponent></LogOutComponent>
-            <Tabs defaultActiveKey="Admin" id="uncontrolled-tab-example">
-                <Tab eventKey="Admin add Category" title="Add Category"> 
-                <AddCategoryComponent></AddCategoryComponent>
-                </Tab>
-                <Tab eventKey="View Category List" title="View Category List"> 
-                <ViewCategoryListComponent></ViewCategoryListComponent>
-                </Tab>
+            <div class="bs-example">
+                <ul class="nav nav-tabs">
 
+                    <li class="nav-item">
+                        <a href="/addcategorycomponent" class="nav-link" data-toggle="tab">Add Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/viewcategorylist" class="nav-link" data-toggle="tab">View Category List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/viewcategorybyname" class="nav-link" data-toggle="tab">View Category By Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/viewuserlist" class="nav-link" data-toggle="tab">View User List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/viewuserbyname" class="nav-link" data-toggle="tab">View User By Name</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
 
-                <Tab eventKey="User List" title="View User List">
-                  
-                </Tab>
-                <Tab eventKey="Delete Operation" title="Delete User">
-                    
-                </Tab>
-                <Tab eventKey="View Operation" title="View User Details">
-                    <ViewUserComponent></ViewUserComponent>
-                    
-                </Tab>
-            </Tabs>
+                    <div class="tab-pane fade" id="addcategory">
+                    </div>
+                    <div class="tab-pane fade" id="viewcategorylist">
+                    </div>
+                    <div class="tab-pane fade" id="viewcategorybyname">
+                    </div>
+                    <div class="tab-pane fade" id="viewuserlist">
+                    </div>
+                    <div class="tab-pane fade" id="viewuserbyname">
+                    </div>
+                </div>
+            </div>
             <hr></hr>
         </div>
     );
@@ -38,3 +51,5 @@ const AdminServicesComponent = (props)=>{
 
 
 export default AdminServicesComponent
+
+           
