@@ -6,6 +6,7 @@ import '../../css/admin_login.css';
 import AddCategoryAction from '../../actions/admin_actions/add_category'
 import { useHistory } from "react-router-dom";
 import LogOutComponent from '../admin_logout_header';
+import FooterComponent from '../../components/footercomponent';
 
 let set;
 let dispatch;
@@ -16,7 +17,7 @@ let validCategoryDesc = false;
 export const AddCategoryComponent = (props) => {
 
 
- /* dispatch-- is the method used to dispatch actions and trigger state changes to the store*/
+  /* dispatch-- is the method used to dispatch actions and trigger state changes to the store*/
   dispatch = useDispatch();
   /*  new entry onto the history stack. */
   history = useHistory();
@@ -25,141 +26,143 @@ export const AddCategoryComponent = (props) => {
 
   return (
     <div>
-      <LogOutComponent></LogOutComponent>
-    <body>
-      {/* <div class="testbox"> */}
-        <form onSubmit={handleSubmit}
-          onMouseMove={EnableDisable}>
-            <center><h3>Add Category</h3>
-          <div class-name="form-group">
-           
-          {/* </div> */}
-       {/*    <div class="item"> */}
-            <p>Category Name</p>
-            <input type="name" id="name" name="name" placeholder="Enter Category Name" onBlur={validateCategoryName} />
+      <div>
+        <LogOutComponent></LogOutComponent>
+      </div>
+      <div>
+        <br>
+        </br>
+
+        <center><h3>ADD CATGEORY</h3></center>
+        <form className="container shadow-none" onSubmit={handleSubmit} onMouseMove={EnableDisable} >
+
+          <div className="form-group">
+            <p class="pr-5"><h5>Category Name:</h5></p>
+
+            <input size="40" type="name" id="name" name="name" placeholder="Enter Category Name" onBlur={validateCategoryName} required></input>
             <small id="namevalid" class="form-text text-danger invalid-feedback">
               Category name should only contain character between 3 to 12
        </small>
-       </div>
-        {/*   </div>
-          <div class="item"> */}
-          <div class-name="form-group">
-            <p>Category Description</p>
-            <input type="description" id="category_desc" name="category_desc" placeholder="Enter Category Description" onBlur={validateCategoryDescription} />
+
+          </div>
+
+          <div className="form-group">
+            <p class="pr-4"><h5>Category Description:</h5></p>
+            <input size="40" type="description" id="category_desc" name="category_desc" placeholder="Enter Category Description" onBlur={validateCategoryDescription} required />
             <small id="descriptionvalid" class="form-text text-danger invalid-feedback">
               Category Desciption should only contain character between 3 to 25
        </small>
           </div>
-          </center>
- 
+          <br></br>
+
           <center>
             <button class="btn btn-primary " disabled="disabled" id="btnsubmit" >ADD</button>
           </center>
 
         </form>
-      {/* </div>*/}
-    </body> 
+
+      </div>
+      <FooterComponent></FooterComponent>
     </div>
-
-
-
   );
-  function handleSubmit(event) {
 
-   /*  The preventDefault() method cancels the event if it is cancelable,
-      meaning that the default action that belongs to the event will not occur. */
-     event.preventDefault();
-    const data = new FormData(event.target);
-    console.log("in handle Submit :", data)
-    const name = data.get('name');
-    const category_desc = data.get('category_desc');
-    console.log(name);
-    console.log(category_desc);
-    const catObj = new Category(name, category_desc);
-    console.log(catObj);
-    dispatch(AddCategoryAction(catObj));
+}
+function handleSubmit(event) {
 
-    /* redirect the user to home page */
+  /*  The preventDefault() method cancels the event if it is cancelable,
+     meaning that the default action that belongs to the event will not occur. */
+  event.preventDefault();
+  const data = new FormData(event.target);
+  console.log("in handle Submit :", data)
+  const name = data.get('name');
+  const category_desc = data.get('category_desc');
+  console.log(name);
+  console.log(category_desc);
+  const catObj = new Category(name, category_desc);
+  console.log(catObj);
+  dispatch(AddCategoryAction(catObj));
 
-    history.push('/admin-services');
-  };
+  /* redirect the user to home page */
 
-  function EnableDisable(event) {
-    /*  The preventDefault() method cancels the event if it is cancelable,
-      meaning that the default action that belongs to the event will not occur. */
-    event.preventDefault();
-    var btnsubmit = document.getElementById("btnsubmit");
+  history.push('/admin-services');
+};
 
-    console.log("handle disabled called");
-    console.log("validCategoryName", validCategoryName);
-    console.log("validCategoryDesc", validCategoryDesc);
+function EnableDisable(event) {
+  /*  The preventDefault() method cancels the event if it is cancelable,
+    meaning that the default action that belongs to the event will not occur. */
+  event.preventDefault();
+  var btnsubmit = document.getElementById("btnsubmit");
+
+  console.log("handle disabled called");
+  console.log("validCategoryName", validCategoryName);
+  console.log("validCategoryDesc", validCategoryDesc);
 
   /* if both the values are true  */
-    if (validCategoryName && validCategoryDesc) {
+  if (validCategoryName && validCategoryDesc) {
 
-      set = false;
-      console.log("set", set);
-      btnsubmit.disabled = false;
-    }
-    else {
-      btnsubmit.disabled = true;
-    }
+    set = false;
+    console.log("set", set);
+    btnsubmit.disabled = false;
   }
+  else {
+    btnsubmit.disabled = true;
+  }
+}
 
 /* 
 validating category name */
-  function validateCategoryName(event) {
+function validateCategoryName(event) {
 
-    const data = event.target.value;
-    console.log("target", data);
+  const data = event.target.value;
+  console.log("target", data);
 
-    let regex = /[a-zA-Z]{3,10}$/;
-    let inputdata = data;
-    let str = inputdata.trim();
-    console.log(regex, str);
-    if (regex.test(str) && str != "") {
+  let regex = /[a-zA-Z]{3,10}$/;
+  let inputdata = data;
+  let str = inputdata.trim();
+  console.log(regex, str);
+  if (regex.test(str) && str != "") {
 
-      event.target.classList.remove('custom-invalid');
-      event.target.classList.add('custom-valid');
-      validCategoryName = true;
-
-
-    }
-    else {
-
-      event.target.classList.remove('custom-valid');
-      event.target.classList.add('custom-invalid');
-      validCategoryName = false;
-
-    }
-  };
-  /* validating category description */
-  function validateCategoryDescription(event) {
-
-    const data = event.target.value;
-    console.log("target", data);
-
-    let regex = /[a-zA-Z]{3,25}$/;
-    let inputdata = data;
-    let str = inputdata.trim();
-    console.log(regex, str);
-
-    if (regex.test(str) && str != "") {
-
-      event.target.classList.remove('custom-invalid');
-      event.target.classList.add('custom-valid');
-      validCategoryDesc = true;
-
-    }
-    else {
-
-      event.target.classList.remove('custom-valid');
-      event.target.classList.add('custom-invalid');
-      validCategoryDesc = false;
-    }
-  };
+    event.target.classList.remove('custom-invalid');
+    event.target.classList.add('custom-valid');
+    validCategoryName = true;
 
 
-}
+  }
+  else {
+
+    event.target.classList.remove('custom-valid');
+    event.target.classList.add('custom-invalid');
+    validCategoryName = false;
+
+  }
+};
+/* validating category description */
+function validateCategoryDescription(event) {
+
+  const data = event.target.value;
+  console.log("target", data);
+
+  let regex = /[a-zA-Z]{3,25}$/;
+  let inputdata = data;
+  let str = inputdata.trim();
+  console.log(regex, str);
+
+  if (regex.test(str) && str != "") {
+
+    event.target.classList.remove('custom-invalid');
+    event.target.classList.add('custom-valid');
+    validCategoryDesc = true;
+
+  }
+  else {
+
+    event.target.classList.remove('custom-valid');
+    event.target.classList.add('custom-invalid');
+    validCategoryDesc = false;
+  }
+};
+
+
+
 
 export default AddCategoryComponent

@@ -4,6 +4,7 @@ import ViewUserAction from '../../actions/admin_actions/view_user_by_name_action
 import '../../css/read_advertise_by_title.css'
 import {useRef} from 'react';
 import LogOutComponent from '../admin_logout_header';
+import FooterComponent from '../../components/footercomponent';
 
 let dispatch;
 const ViewUserComponent = (props) => {
@@ -26,6 +27,7 @@ const ViewUserComponent = (props) => {
         <div>
             <LogOutComponent></LogOutComponent>
             <center>
+                <h3>User By Name</h3>
             <form onSubmit={handleSubmit}>
                 <div className="container">
                 <div className="search-box">
@@ -54,6 +56,7 @@ const ViewUserComponent = (props) => {
                 </table>
                 </form>
             </center>
+            <FooterComponent></FooterComponent>
         </div>
     );
 }

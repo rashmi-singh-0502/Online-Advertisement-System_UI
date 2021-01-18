@@ -1,11 +1,13 @@
 import { useHistory } from "react-router-dom";
 import '../../css/admin_login.css';
 import HeaderComponent from '../header';
+import FooterComponent from '../../components/footercomponent';
 
+let set;
 let history;
 let validUserName = false;
 let validPassword = false;
-let set;
+
 
 
 const Services = (props) => {
@@ -33,11 +35,12 @@ const Services = (props) => {
         </div>
 
 
-        <button type="submit" className="btn-success btn-sm shadow-none" disabled="disabled" id="btnsubmit">Log in</button>
+        <button  class="btn btn-primary "  id="btnsubmit" disabled="disabled">Log in</button>
         <p className="forgot-password text-center">
           <a href="#">Forgot password?</a>
         </p>
       </form>
+      <FooterComponent></FooterComponent>
     </div>
 
   )
@@ -78,7 +81,7 @@ function validateUserName(event) {
     event.target.classList.remove('custom-valid');
     event.target.classList.add('custom-invalid');
 
-    validUserName = true;
+    validUserName = false;
   }
 };
 

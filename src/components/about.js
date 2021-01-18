@@ -1,6 +1,7 @@
-import { Jumbotron, Button, Nav, Card, Container, Row, Col } from 'react-bootstrap';
+
 import '../css/about.css';
 import HeaderComponent from './header';
+import FooterComponent from '../components/footercomponent';
 
 const AboutUsComponent = () => {
   return (
@@ -20,6 +21,7 @@ const AboutUsComponent = () => {
         letgo, OAS, Stradia and Storia, more than 10 million things are listed on
         its market-leading apps and platforms every single month.
       </div>
+      <FooterComponent></FooterComponent>
     </div>
   );
 }

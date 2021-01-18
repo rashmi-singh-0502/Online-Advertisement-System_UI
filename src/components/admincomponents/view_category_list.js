@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ShowCategoryAction from '../../actions/admin_actions/view_category_list';
 import LogOutComponent from '../admin_logout_header';
 import DeleteCategoryAction from '../../actions/admin_actions/delete_category'
+import FooterComponent from '../../components/footercomponent';
 
 
 let dispatch;
@@ -34,34 +35,43 @@ const ViewCategoryListComponent = (props) => {
 
   return (
     <div>
+
       <LogOutComponent></LogOutComponent>
-      <center>
-       <h3>CATEGORY LIST</h3>
-       </center>
-      <center>
 
-    
 
-        <table border="4">
-          <thead class="indigo white-text">
-            <tr>
+      <main>
 
-              <th>Category Id</th>
-              <th>Category Name</th>
-              <th>Category Description</th>
-              <th>Actions</th>
 
-            </tr>
-          </thead>
-          <tbody>
-            {/*  render is a method that tell react what to display */}
-            {renderTableData(categoryList)}
-          </tbody>
-        </table>
 
-      </center>
+        <center>
+          <h3>CATEGORY LIST</h3>
+        </center>
+        <center>
+
+
+
+          <table border="4">
+            <thead class="indigo white-text">
+              <tr>
+
+                <th>Category Id</th>
+                <th>Category Name</th>
+                <th>Category Description</th>
+                <th>Actions</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {/*  render is a method that tell react what to display */}
+              {renderTableData(categoryList)}
+            </tbody>
+          </table>
+
+        </center>
+      </main>
+      <FooterComponent></FooterComponent>
+
     </div>
-
   );
 };
 function renderTableData(categoryList) {
@@ -76,7 +86,7 @@ function renderTableData(categoryList) {
         <td>{category_desc}</td>
         <td>
           &nbsp;&nbsp;&nbsp;
-        <button className="btn btn-danger shadow-none" onClick={(e) => deleteCategory(e, category_id)}>Delete</button>
+        <button className="btn btn-danger shadow-none text-wrap" onClick={(e) => deleteCategory(e, category_id)}>Delete</button>
 
         </td>
 

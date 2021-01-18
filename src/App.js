@@ -1,23 +1,16 @@
-//APP CLASS / DO NOT DELETE THIS FILE
+
 import './App.css';
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import Carousel from 'react-bootstrap/Carousel'
 import { Route, Link, Switch } from 'react-router-dom'
 import HomeComponent from './components/home'
 import AdminServicesComponent from './components/admin-services'
-import FooterComponent from './components/footercomponent'
 import UserServicesComponent from './components/user-services'
 import Services from './components/admincomponents/admin_login'
 import UserServices from './components/usercomponent/user_login'
-import Carouselcomponent from './components/carousell'
 import GetAdvertiseListComponent from './components/usercomponent/read_advertise_list'
 import ReadAdvertiseByTitleComponent from './components/usercomponent/read_advertise_by_title'
 import AddUser from './components/usercomponent/AddUser'
 import SearchComponent from './components/usercomponent/search_advertise'
 import AboutUsComponent from './components/about';
-import HeaderComponent from './components/header';
 import ViewUserComponent from './components/admincomponents/view_user_by_name';
 import AddCategoryComponent from './components/admincomponents/add_category';
 import ViewCategoryListComponent from './components/admincomponents/view_category_list';
@@ -31,10 +24,9 @@ import AddAd from './components/usercomponent/AddAd'
 function App() {
   return (
     <div className="App">
-      <FooterComponent></FooterComponent>
       {/* Switching the content from nav operations */}
       <Switch>
-         {/*Route is the conditionally 
+        {/*Route is the conditionally 
         shown component that renders some
          UI when its path matches the current URL.*/}
         <Route path='/admin_login' component={Services} exact />

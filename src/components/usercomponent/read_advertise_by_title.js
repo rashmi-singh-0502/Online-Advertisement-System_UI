@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ReadByAdvertiseTitleAction from '../../actions/user_actions/read_advertise_by_title_action';
 import '../../css/read_advertise_by_title.css'
 import LogOutComponent from '../user_logout_header';
+import FooterComponent from '../../components/footercomponent';
 
 let dispatch;
 let validTitle = false;
@@ -32,7 +33,7 @@ const ReadAdvertiseByTitleComponent = (props) => {
                             </small>
                         </div>
                         <div>
-                            <button type="submit" className="btn-sm btn-success shadow-none" disabled="disabled" id="btnsubmit">View</button>
+                          <button  class="btn btn-primary "  id="btnsubmit" disabled="disabled">View</button>
                         </div>
                     </div>
                     <table border="2" className="table_view">
@@ -51,6 +52,7 @@ const ReadAdvertiseByTitleComponent = (props) => {
                     </table>
                 </form>
             </center>
+            <FooterComponent></FooterComponent>
         </div>
     );
 }
@@ -75,41 +77,38 @@ function renderTableData(advertiseList) {
     })
 };
 
-function EnableDisable(event)
-{
-  event.preventDefault();
-  var btnsubmit=document.getElementById("btnsubmit");
-  console.log("handle disabled called");
-  console.log("validTitle",validTitle);
-  
-  if(validTitle)
-  {  
-    set=false;
-    console.log("set",set);
-    btnsubmit.disabled=false;
-  }
-  else
-  {
-    btnsubmit.disabled=true;
-  }
+function EnableDisable(event) {
+    event.preventDefault();
+    var btnsubmit = document.getElementById("btnsubmit");
+    console.log("handle disabled called");
+    console.log("validTitle", validTitle);
+
+    if (validTitle) {
+        set = false;
+        console.log("set", set);
+        btnsubmit.disabled = false;
+    }
+    else {
+        btnsubmit.disabled = true;
+    }
 }
 
 function validateTitle(event) {
-  const data = event.target.value;
-  console.log("target", data);
+    const data = event.target.value;
+    console.log("target", data);
 
-  if (data != "") {
-    event.target.classList.remove('custom-invalid');
-    event.target.classList.add('custom-valid');
+    if (data != "") {
+        event.target.classList.remove('custom-invalid');
+        event.target.classList.add('custom-valid');
 
-    validTitle = true;
+        validTitle = true;
 
-  } else {
-    event.target.classList.remove('custom-valid');
-    event.target.classList.add('custom-invalid');
+    } else {
+        event.target.classList.remove('custom-valid');
+        event.target.classList.add('custom-invalid');
 
-    validTitle = true;
-  }
+        validTitle = true;
+    }
 };
 
 function handleSubmit(event) {

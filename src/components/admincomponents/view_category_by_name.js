@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ViewByCategoryNameAction from '../../actions/admin_actions/view_by_category_name';
 import '../../css/view_category_by_name.css'
 import LogOutComponent from '../admin_logout_header';
+import FooterComponent from '../../components/footercomponent';
 
 
 let dispatch;
@@ -27,8 +28,10 @@ const ViewCategoryByNameComponent = (props) => {
         <div>
             <LogOutComponent></LogOutComponent>
             <center>
+                <br></br>
+                <h3>Category By Name</h3>
                 <form onSubmit={handleSubmit} onMouseMove={EnableDisable}>
-                    <div className="container">
+                    <div className="container-view">
                         <div className="search-box">
                             <p>Enter Category Name:</p>
                             <input type="text" name="title" placeholder="Enter Category Name" onBlur={validateCategoryName}></input>
@@ -55,6 +58,7 @@ const ViewCategoryByNameComponent = (props) => {
                     </table>
                 </form>
             </center>
+            <FooterComponent></FooterComponent>
         </div>
     );
 }

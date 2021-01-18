@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import SearchAction from '../../actions/user_actions/searchaction'
 import '../../css/read_advertise_by_title.css'
 import LogOutComponent from '../user_logout_header';
+import FooterComponent from '../../components/footercomponent';
 
 let dispatch;
 let validTitle = false;
@@ -52,6 +53,7 @@ const SearchAdvertise = (props) => {
                     </table>
                 </form>
             </center>
+            <FooterComponent></FooterComponent>
         </div>
     );
 }

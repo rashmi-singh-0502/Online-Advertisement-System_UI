@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import ShowUsersAction from '../../actions/admin_actions/view_user_list';
 import DeleteUserAction from '../../actions/admin_actions/delete_user'
 import LogOutComponent from '../admin_logout_header'
+import FooterComponent from '../../components/footercomponent';
+
+
 
 let dispatch;
 const ShowUsers = (props) => {
@@ -28,6 +31,9 @@ const ShowUsers = (props) => {
     return (<div>
         <LogOutComponent></LogOutComponent>
         <center>
+            <br></br>
+            <h3>USER LIST</h3>
+            <br></br>
             <table border="2">
                 <thead>
                     <tr>
@@ -45,6 +51,7 @@ const ShowUsers = (props) => {
                 </tbody>
             </table>
         </center>
+        <FooterComponent></FooterComponent>
     </div>);
 };
 
